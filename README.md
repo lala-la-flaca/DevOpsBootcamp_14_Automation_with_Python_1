@@ -29,7 +29,7 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
 # ⚙️ Project Configuration
 ## Infraestructure with Terraform
 1. Use Terraform to provision EC2 instances using the initial Terraform Demo1.
-   [Terrform files](https://gitlab.com/devopsbootcamp4095512/devopsbootcamp_12_terraform_aws/-/tree/demo/python-and-terraform?ref_type=heads)
+   [Terraform files](https://gitlab.com/devopsbootcamp4095512/devopsbootcamp_12_terraform_aws/-/tree/demo/python-and-terraform?ref_type=heads)
    
 2. Modify the Terraform file to add the second and third instances.
    ```bash
