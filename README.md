@@ -27,4 +27,15 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
 # 🏗 Project Architecture
 
 # ⚙️ Project Configuration
-1. Use Terraform to provision EC2 instances.
+## Infraestructure with Terraform
+1. Use Terraform to provision EC2 instances using the initial Terraform Demo1.
+2. Modify the Terraform file to add the second and third instances.
+3. Plan and test infrastructure using Terraform.
+4. Deploy infrastructure with Terraform
+5. Check the AWS console to check components.
+   
+## Monitoring Instances
+1. Install the boto3 SDK for AWS
+2. Initialize the client and resource
+3. Obtain the current status of EC2 instances.
+4. Output Results
