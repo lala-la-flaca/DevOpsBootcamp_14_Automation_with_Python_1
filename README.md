@@ -75,7 +75,7 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```bash
    terraform apply --auto-approve
    ```
-   <img src="" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/4%20terraform%20apply.png" width=800 />
    
 5. Check the AWS console to check components.
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/6%20aws%20console%20ec2%20instaces%20using%20terraform.png" width=800 />
