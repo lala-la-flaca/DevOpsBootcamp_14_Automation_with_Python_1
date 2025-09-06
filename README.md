@@ -63,17 +63,22 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
       user_data_replace_on_change = true
       }
    ```
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/1%20adding%20second%20and%20third%20instance%20in%20tteraform%20files.png" width=800 />
    
 3. Plan and test infrastructure using Terraform.
    ```bash
    terraform plan
    ```
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/5%20terraform%20plan.png" width=800 />
+   
 4. Deploy infrastructure with Terraform
    ```bash
-   terraform apply
+   terraform apply --auto-approve
    ```
-5. Check the AWS console to check components.
    <img src="" width=800 />
+   
+5. Check the AWS console to check components.
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/6%20aws%20console%20ec2%20instaces%20using%20terraform.png" width=800 />
    
 ## Monitoring Instances
 1. Install the boto3 SDK for AWS
@@ -86,11 +91,13 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```bash
    import boto3
    ```
+   <img src="" width=800 />
+   
 4. Initialize the EC2 client.
    ```bash
    ec2_client = boto3.client('ec2', region_name="us-east-1")
    ```
-   <img src="" />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/init%20ec2%20client.PNG" width=800 />
    
 8. Obtain the current status of EC2 instances.
    ```bash
@@ -112,6 +119,8 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
       print("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n")
 
    ```
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/checking%20sttaus.PNG" width=800 />
+   
 9. Import Schedule module
   ```bash
   import schedule  
@@ -122,7 +131,9 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
     while True:
     schedule.run_pending()
     ```
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/schedule%20app%20to%20check%20status.PNG" width=800 />
+    
 12. Output Results
-    <img src="" />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/results.PNG" />
 
     
