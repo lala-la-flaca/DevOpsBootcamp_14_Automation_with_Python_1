@@ -91,15 +91,15 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```bash
    import boto3
    ```
-   <img src="" width=800 />
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/boto.PNG" width=800 />
    
-4. Initialize the EC2 client.
+3. Initialize the EC2 client.
    ```bash
    ec2_client = boto3.client('ec2', region_name="us-east-1")
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/init%20ec2%20client.PNG" width=800 />
    
-8. Obtain the current status of EC2 instances.
+4. Obtain the current status of EC2 instances.
    ```bash
      def check_instance_status():
       #Using describe instance status
@@ -121,19 +121,21 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/checking%20sttaus.PNG" width=800 />
    
-9. Import Schedule module
-  ```bash
-  import schedule  
-  ```
-11. Schedule the app to check the EC2 status every 10 seconds ( Demo purposes only)
+5. Import Schedule module.
+   ```bash
+    import schedule  
+    ```
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/sche.PNG" width=800 />
+ 
+6. Schedule the app to check the EC2 status every 10 seconds ( Demo purposes only)
     ```bash
     schedule.every(10).seconds.do(check_instance_status)
     while True:
     schedule.run_pending()
     ```
-    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/schedule%20app%20to%20check%20status.PNG" width=800 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/scheudle%20instance.PNG" width=800 />
     
-12. Output Results
+7. Output Results
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_14_Automation_with_Python_1/blob/main/Img/results.PNG" />
 
     
