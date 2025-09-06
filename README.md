@@ -82,7 +82,6 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```
    [Boto Module](https://pypi.org/project/boto3/)
 
-   
 2. Import library
    ```bash
    import boto3
@@ -93,12 +92,6 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    ```
    <img src="" />
    
-6. Check Available EC2 instances
-   ```bash
-      #Getting All EC2 instances available in region US-EAST-1
-      #Using describe instance
-      all_available_instances = ec2_client.describe_instances()
-   ```
 8. Obtain the current status of EC2 instances.
    ```bash
      def check_instance_status():
@@ -106,7 +99,7 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
       #Getting All instance statuses
       all_instance_statuses = ec2_client.describe_instance_status(
           IncludeAllInstances=True
-          #Dedefault behavior returns only running instances, when setting this parameters to True, then includes all states
+          # Default behavior returns only running instances. When setting this parameter to True includes all states.
       )
       instance_statuses =  all_instance_statuses["InstanceStatuses"]
   
