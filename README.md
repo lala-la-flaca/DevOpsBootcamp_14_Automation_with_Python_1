@@ -77,6 +77,59 @@ Create a Python script to fetch and display EC2 instance statuses and extend it 
    
 ## Monitoring Instances
 1. Install the boto3 SDK for AWS
-2. Initialize the client and resource
-3. Obtain the current status of EC2 instances.
-4. Output Results
+   ```
+    pip install boto3
+   ```
+   [Boto Module](https://pypi.org/project/boto3/)
+
+   
+2. Import library
+   ```bash
+   import boto3
+   ```
+4. Initialize the EC2 client.
+   ```bash
+   ec2_client = boto3.client('ec2', region_name="us-east-1")
+   ```
+   <img src="" />
+   
+6. Check Available EC2 instances
+   ```bash
+      #Getting All EC2 instances available in region US-EAST-1
+      #Using describe instance
+      all_available_instances = ec2_client.describe_instances()
+   ```
+8. Obtain the current status of EC2 instances.
+   ```bash
+     def check_instance_status():
+      #Using describe instance status
+      #Getting All instance statuses
+      all_instance_statuses = ec2_client.describe_instance_status(
+          IncludeAllInstances=True
+          #Dedefault behavior returns only running instances, when setting this parameters to True, then includes all states
+      )
+      instance_statuses =  all_instance_statuses["InstanceStatuses"]
+  
+      for instance_status in instance_statuses:
+          instance_id =  instance_status["InstanceId"]
+          instance_state = instance_status["InstanceState"]["Name"]
+          ec2_status = instance_status["InstanceStatus"]["Status"]
+          system_status = instance_status['SystemStatus']["Status"]
+          print(f"Instance {instance_id} is {instance_state} with instance Status:{ec2_status} & System Status:{system_status}")
+      print("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n")
+
+   ```
+9. Import Schedule module
+  ```bash
+  import schedule  
+  ```
+11. Schedule the app to check the EC2 status every 10 seconds ( Demo purposes only)
+    ```bash
+    schedule.every(10).seconds.do(check_instance_status)
+    while True:
+    schedule.run_pending()
+    ```
+12. Output Results
+    <img src="" />
+
+    
